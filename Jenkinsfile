@@ -41,6 +41,11 @@ pipeline {
                   sh "docker rmi -f ${docker_repo_uri}:${commit_id}"
               }
          } 
+	    stage('slack notification') {
+      steps {
+        slackSend color: 'good', message: 'success message'
+      }
+    }
       stage('Deploy') {
           steps {
              // Override image field in taskdef file
