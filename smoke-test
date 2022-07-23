@@ -1,0 +1,7 @@
+#!/bin/bash
+
+. smoke.sh
+
+smoke_url_ok "EC2Co-EcsEl-VDZC1C2WVFAM-1391256027.us-east-1.elb.amazonaws.com"
+    smoke_assert_body "search"
+smoke_report
