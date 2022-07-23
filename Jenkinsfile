@@ -59,7 +59,7 @@ pipeline {
 		steps {
 			sh "chmod +x smoke-test"
 			sh "./smoke-test"
-			
-		    
+		}
+	}			    
     }
 }
