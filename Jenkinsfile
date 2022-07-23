@@ -55,8 +55,10 @@ pipeline {
              sh "aws ecs update-service --cluster ${cluster} --service sample-app-service --task-definition ${task_arn} --region ${region}"
            }
        }
-// 	stage('Smoke Test') {
-// 		steps {
+	stage('Smoke Test') {
+		steps {
+			sh "chmod +x smoke-test"
+			sh "./smoke-test"
 			
 		    
     }
